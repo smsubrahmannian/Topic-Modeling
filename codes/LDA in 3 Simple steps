@@ -1,0 +1,29 @@
+from gensim import models,corpora
+import spacy
+
+nlp = spacy.load('en')
+data = pd.read_feather('data/preprocessed_data')
+
+# Step-1: clean up your text and generate list of words for each document. I recommend you go through an introductory tutorial on Spacy in this link. The content inside the cleanup function is designed for a specific action. I have provided two examples in the github repo
+
+def clean_up(text):
+    removal=['ADV','PRON','CCONJ','PUNCT',
+                                   'PART','DET','ADP','SPACE']
+    text_out = []
+    doc= nlp(text)
+    for token in doc:
+        if token.is_stop == False and token.is_alpha and len(token)>2 and token.pos_ not in removal:
+            lemma = token.lemma_
+            text_out.append(lemma)
+    return text_out
+datalist = data.text.apply(lambda x:clean_up(x))
+
+# Step-2: Create a vocabulary for the lda model and also convert our corpus into document-term matrix for Lda
+dictionary = corpora.Dictionary(dataList)
+doc_term_matrix = [dictionary.doc2bow(doc) for doc in skillList]
+
+# Step-3 : Define multicore lda model and enjoy!!!
+num_topic =10
+Lda = models.LdaMulticore
+lda= Lda(doc_term_matrix, num_topics=num_topics,id2word = dictionary, passes=20,chunksize=2000,random_state=3)
+
