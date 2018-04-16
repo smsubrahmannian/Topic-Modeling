@@ -1,5 +1,5 @@
 # Topic-Modeling
-This repository help you understand topic modeling through LDA. It also discusses the best practises in this field. 
+This repository help you understand topic modeling with LDA. It also discusses the best practises in this field. 
 
 ## Topics Covered 
 1. Introduction to topic modeling
