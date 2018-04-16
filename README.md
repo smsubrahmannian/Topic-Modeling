@@ -8,3 +8,5 @@ This repository help you understand topic modeling with LDA. It also discusses t
 4. Intrepreting topic models using pyLDAviz package
 5. Feature engineering through topic modeling
 
+## Blog
+
