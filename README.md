@@ -9,4 +9,6 @@ This repository help you understand topic modeling with LDA. It also discusses t
 5. Feature engineering through topic modeling
 
 ## Blog
+Check out my blog for indepth understanding on how LDA works and it is implemented. The link to the blog is given below.
+https://medium.com/@soorajsubrahmannian/extracting-hidden-topics-in-a-corpus-55b2214fc17d
 
